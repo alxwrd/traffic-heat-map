@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import os
+import gmplot
 from trafficfeed import TrafficFeed
 
 

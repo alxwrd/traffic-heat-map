@@ -1,4 +1,3 @@
-import gmplot
 from bottle import Bottle
 
 class WebServer(Bottle):
