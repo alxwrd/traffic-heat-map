@@ -43,6 +43,20 @@ class Scraper(object):
                                           item.find("latitude").text)
                     )
                 self.update_seen(item.find("guid").text)
+                gmap = gmplot.GoogleMapPlotter(52.561928, -1.464854, 7)
+
+        with open("traffic_data", "r") as f:
+            points = f.readlines()
+
+        heat_lats = []
+        heat_lngs = []
+        for point in points:
+            lng, lat = point.split(",")
+            heat_lngs.append(float(lng))
+            heat_lats.append(float(lat))
+
+        gmap.heatmap(heat_lats, heat_lngs)
+        gmap.draw("traffic-heat-map.html")
 
 
     def update_seen(self, item_id):
