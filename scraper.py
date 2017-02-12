@@ -44,8 +44,8 @@ class Scraper(object):
                                           item.find("latitude").text)
                     )
                 self.update_seen(item.find("guid").text)
-                gmap = gmplot.GoogleMapPlotter(52.561928, -1.464854, 7)
 
+        gmap = gmplot.GoogleMapPlotter(52.561928, -1.464854, 7)
         with open("traffic_data", "r") as f:
             points = f.readlines()
 
